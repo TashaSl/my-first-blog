@@ -3,18 +3,17 @@
         <title>My blog</title>
     </head>
     <body>
-    	<div>
+        <div>
     		<h1><a href="http://djangogirls.org">Django's girls</a></h1>
     	</div>
     	<div>
-    		<ul>
-	    		<li>
-	    			<h2> <em> Первый пост </em> </h2>
-	    		</li>
-	    		<li>
-	    			<h2> <em> Второй пост </em> </h2>
-	    		</li>
-	    	</ul>
+            {% for post in posts %}
+    		    <div>
+                    <p>published: {{ post.published_date }}</p>
+                    <h1><a href="">{{ post.title }}</a></h1>
+                    <p>{{ post.text|linebreaks }}</p>
+                </div>
+            {% endfor %}
 	    </div>
     </body>
 </html>
